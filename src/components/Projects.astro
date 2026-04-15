@@ -1,0 +1,69 @@
+---
+import { content } from '../data/content';
+import { FolderGit2, Github, Sparkles } from 'lucide-react';
+---
+
+<section id="projects" class="py-24 scroll-mt-20">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex items-center justify-between mb-12">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+          <FolderGit2 class="w-5 h-5 text-primary" />
+        </div>
+        <h2 class="font-display text-3xl font-bold uppercase tracking-tight">Featured Projects</h2>
+      </div>
+      <a 
+        href={`https://github.com/${content.github}`} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-bold uppercase tracking-widest"
+      >
+        <Github class="w-4 h-4" />
+        {content.handle}
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {content.projects.map((project, i) => (
+        <div class={`p-8 rounded-3xl transition-all duration-300 flex flex-col group ${
+          i === 0 ? 'bg-gradient-to-br from-primary/10 to-background border-2 border-primary/30' : 'bg-card border border-border/50 hover:border-primary/20'
+        }`}>
+          <div class="flex items-start justify-between mb-6 gap-4">
+            <h3 class="font-display text-2xl font-bold group-hover:text-primary transition-colors">{project.title}</h3>
+            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest whitespace-nowrap shrink-0">{project.badge}</span>
+          </div>
+          
+          <p class="text-muted-foreground leading-relaxed mb-8 flex-1">
+            {project.desc}
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            {project.tech.map((t) => (
+              <span class="px-3 py-1.5 rounded-full text-xs font-bold bg-muted text-muted-foreground uppercase tracking-tight">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Featured Skills Highlight -->
+    <div class="mt-6 p-8 rounded-3xl bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20">
+      <div class="flex items-start gap-6">
+        <div class="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center shrink-0">
+          <Sparkles class="w-7 h-7 text-accent" />
+        </div>
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
+            <h3 class="font-display text-2xl font-bold">AI Engineering Leadership</h3>
+            <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest w-fit">Agentic Workflows</span>
+          </div>
+          <p class="text-muted-foreground text-lg leading-relaxed">
+            Expert in architecting autonomous systems using multi-agent orchestration and LLMs to drive operational efficiency and technical innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

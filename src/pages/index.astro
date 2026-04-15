@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Footer from '../components/Footer.astro';
+import TableOfContents from '../components/TableOfContents';
+import { content } from '../data/content';
+import { Share2, GraduationCap, Code, Globe } from 'lucide-react';
+---
+
+<Layout 
+  title={`${content.name} | ${content.title}`}
+  description={content.bio[0]}
+>
+  <TableOfContents client:load />
+
+  <main>
+    <Hero client:load />
+    
+    <!-- Bio Section -->
+    <section class="py-24 border-b border-border/50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="max-w-4xl text-center mx-auto">
+          {content.bio.map((p) => (
+            <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 last:mb-0 font-light">
+              {p}
+            </p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Experience />
+    <Projects />
+
+    <!-- Sharing Section -->
+    <section id="speaking" class="py-24 bg-muted/30 scroll-mt-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-12">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Share2 class="w-5 h-5 text-primary" />
+          </div>
+          <h2 class="font-display text-3xl font-bold uppercase tracking-tight">Sharing</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-8 rounded-3xl bg-card border border-border/50 h-full flex flex-col hover:border-primary/20 transition-all">
+            <span class="text-xs text-primary font-bold uppercase tracking-widest mb-4">2018 · Universidad Tecmilenio</span>
+            <h3 class="font-display text-2xl font-bold mb-4 text-foreground">Adjunct Professor</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Mentored over 100 students on the practical application of distributed computing principles and modern software engineering practices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-24 scroll-mt-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-12">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <GraduationCap class="w-5 h-5 text-primary" />
+          </div>
+          <h2 class="font-display text-3xl font-bold uppercase tracking-tight">Education</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {content.education.map((item) => (
+            <div class="p-8 rounded-3xl bg-card border border-border/50 group hover:border-primary/20 transition-all">
+              <span class="text-xs text-primary font-bold uppercase tracking-widest mb-4 block">{item.year} · {item.org}</span>
+              <h3 class="font-display text-2xl font-bold mb-2 group-hover:text-primary transition-colors text-foreground">{item.title}</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="tech" class="py-24 bg-muted/30 scroll-mt-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-12">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Code class="w-5 h-5 text-primary" />
+          </div>
+          <h2 class="font-display text-3xl font-bold uppercase tracking-tight">Skills</h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-12">
+          <div>
+            <h3 class="font-display font-bold mb-6 flex items-center gap-2 text-foreground">
+              <Globe class="w-4 h-4 text-primary" />
+              Languages
+            </h3>
+            <div class="space-y-4">
+              {content.skills.languages.map((lang) => (
+                <div class="flex justify-between items-center text-sm font-medium">
+                  <span class="text-foreground">{lang.name}</span>
+                  <span class="text-primary uppercase tracking-widest text-xs font-bold">{lang.level}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="md:col-span-3">
+            <h3 class="font-display font-bold mb-6 text-foreground">Tech Stack</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {content.skills.stack.map((cat) => (
+                <div class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/20 transition-all group">
+                  <span class="text-xs font-bold text-primary uppercase tracking-widest mb-4 block group-hover:text-primary transition-colors">{cat.name}</span>
+                  <div class="flex flex-wrap gap-2.5">
+                    {cat.items.map((item) => (
+                      <span class="px-3 py-1.5 rounded-lg text-xs font-bold bg-muted/50 text-muted-foreground border border-border/50 hover:border-primary/30 hover:text-primary transition-all uppercase tracking-tight">{item}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>

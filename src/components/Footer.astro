@@ -1,0 +1,47 @@
+---
+import { content } from "../data/content";
+import { Mail, Linkedin } from "lucide-react";
+const year = new Date().getFullYear();
+---
+
+<footer id="contact" class="py-32 relative overflow-hidden">
+  <!-- Vignette effects -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+  
+  <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+    <h2 class="font-display text-5xl md:text-6xl font-bold mb-8 tracking-tight">Let's talk</h2>
+    
+    <p class="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+      I am looking for a US-based Staff or Senior role where I can lead from the front. I really enjoy the balance of being a hands-on contributor while also managing the bigger picture. My goal is always the same: ship scalable code that unblocks the team and actually see the impact on the metrics.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-24">
+      <a
+        href={`mailto:${content.email}`}
+        class="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-[#00a3ff] text-white font-bold hover:brightness-110 hover:shadow-[0_0_40px_rgba(0,163,255,0.4)] transition-all duration-300"
+      >
+        <Mail class="w-6 h-6" />
+        Contact Me
+      </a>
+      <a
+        href="https://linkedin.com/in/orlandomgr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 px-10 py-5 rounded-full border border-border bg-card hover:bg-muted hover:border-primary/30 transition-all duration-300 group"
+      >
+        <Linkedin class="w-6 h-6 text-[#0a66c2]" />
+        <span class="font-bold">LinkedIn</span>
+      </a>
+    </div>
+
+    <div class="pt-12 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-sm text-muted-foreground font-medium">
+        &copy; {year} Orlando Magallanes Garcia
+      </p>
+      <div class="flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+        <a href="https://github.com/orlandomgr" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">GitHub</a>
+        <a href="https://linkedin.com/in/orlandomgr" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>

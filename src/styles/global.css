@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
+  --primary: 199 89% 48%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 45 93% 47%;
+  --accent-foreground: 0 0% 100%;
+  --border: 0 0% 15%;
+  --card: 0 0% 7%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 64%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 1px 1px, #222 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00d9ff] to-[#00a3ff];
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
