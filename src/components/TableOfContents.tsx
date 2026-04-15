@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const SECTIONS = [
-  { id: 'experience', label: 'Work Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Work Experience' },
   { id: 'speaking', label: 'Mentorship' },
   { id: 'education', label: 'Education' },
   { id: 'tech', label: 'Skills' },
@@ -18,13 +18,14 @@ export default function TableOfContents() {
 
   useEffect(() => {
     const checkVisibility = () => {
-      const experienceSection = document.getElementById('experience');
-      if (!experienceSection) return;
-      
-      const rect = experienceSection.getBoundingClientRect();
-      // Show TOC when experience section starts coming into view
+      const firstSection = document.getElementById('projects');
+      if (!firstSection) return;
+
+      const rect = firstSection.getBoundingClientRect();
+      // Show TOC when projects section starts coming into view
       setVisible(rect.top <= 200);
     };
+
 
     const updateActiveSection = () => {
       const threshold = window.innerHeight * 0.4;

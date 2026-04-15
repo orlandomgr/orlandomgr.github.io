@@ -77,10 +77,8 @@ export default function Hero() {
 
   return (
     <header className="relative pt-20 pb-32 overflow-hidden border-b border-border/50">
-      {/* Background elements from cv-santiago style */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Avatar with verified badge */}

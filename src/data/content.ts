@@ -79,19 +79,19 @@ export const content = {
           tech: ["Java", "Microservices", "Oracle DB", "OCI"],
           points: ["Unified fleet management at enterprise scale"]
         },
-        { 
-          title: "Exadata Monitoring", 
-          desc: "Monitoring architecture for high-performance systems", 
-          badge: "Architecture", 
+        {
+          title: "Exadata Monitoring",
+          desc: "Monitoring architecture for high-performance systems",
+          badge: "Architecture",
           tech: ["Exadata", "Real-time Analytics", "Distributed Systems"],
-          points: ["High-scale monitoring for Exadata clusters"] 
+          points: ["High-scale monitoring for Exadata clusters"]
         },
-        { 
-          title: "Cloud Scale Fleet", 
-          desc: "Managing thousands of enterprise databases", 
-          badge: "Scale", 
+        {
+          title: "Cloud Scale Fleet",
+          desc: "Managing thousands of enterprise databases",
+          badge: "Scale",
           tech: ["Automation", "Cloud Infrastructure", "Systems Design"],
-          points: ["Fleet-wide operations and automated maintenance"] 
+          points: ["Fleet-wide operations and automated maintenance"]
         },
         {
           title: "Mentoring",
@@ -240,7 +240,7 @@ export const content = {
     stack: [
       { name: "AI / DATA", items: ["Agentic Workflows", "Microsoft Agent Framework", "OpenAI API", "LM Studio", "Prompt Engineering"] },
       { name: "BACKEND & CLOUD", items: ["Oracle Cloud (OCI)", "AWS", "Google Cloud", "Azure", "Java", "Python", "Node.js", "Microservices", "Exadata Architecture"] },
-      { name: "FRONTEND", items: ["React", "TypeScript", "Oracle JET", "JavaScript (ES6+)"] },
+      { name: "FRONTEND", items: ["React", "TypeScript", "Oracle JET", "JavaScript (ES6+)", "Astro"] },
       { name: "DEVOPS & INFRA", items: ["CI/CD Optimization", "Docker", "Git", "Kafka", "Redis"] },
       { name: "ARCHITECTURE", items: ["Distributed Systems", "System Design"] }
     ]
