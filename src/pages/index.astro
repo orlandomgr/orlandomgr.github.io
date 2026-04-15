@@ -6,7 +6,7 @@ import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro';
 import TableOfContents from '../components/TableOfContents';
 import { content } from '../data/content';
-import { Share2, GraduationCap, Code, Globe } from 'lucide-react';
+import { Share2, GraduationCap, Code, Globe, BookOpen } from 'lucide-react';
 ---
 
 <Layout 
@@ -34,19 +34,19 @@ import { Share2, GraduationCap, Code, Globe } from 'lucide-react';
     <Experience />
     <Projects />
 
-    <!-- Sharing Section -->
+    <!-- Mentorship & Teaching Section -->
     <section id="speaking" class="py-24 bg-muted/30 scroll-mt-20">
       <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center gap-3 mb-12">
           <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-            <Share2 class="w-5 h-5 text-primary" />
+            <BookOpen class="w-5 h-5 text-primary" />
           </div>
-          <h2 class="font-display text-3xl font-bold uppercase tracking-tight">Sharing</h2>
+          <h2 class="font-display text-3xl font-bold uppercase tracking-tight">Mentorship & Teaching</h2>
         </div>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="p-8 rounded-3xl bg-card border border-border/50 h-full flex flex-col hover:border-primary/20 transition-all">
+          <div class="p-8 rounded-3xl bg-card border border-border/50 h-full flex flex-col hover:border-primary/20 transition-all group">
             <span class="text-xs text-primary font-bold uppercase tracking-widest mb-4">2018 · Universidad Tecmilenio</span>
-            <h3 class="font-display text-2xl font-bold mb-4 text-foreground">Adjunct Professor</h3>
+            <h3 class="font-display text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">Adjunct Professor</h3>
             <p class="text-muted-foreground leading-relaxed">
               Mentored over 100 students on the practical application of distributed computing principles and modern software engineering practices.
             </p>

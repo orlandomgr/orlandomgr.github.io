@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 const SECTIONS = [
   { id: 'experience', label: 'Work Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'speaking', label: 'Sharing' },
+  { id: 'speaking', label: 'Mentorship' },
   { id: 'education', label: 'Education' },
   { id: 'tech', label: 'Skills' },
   { id: 'contact', label: 'Contact' },

@@ -1,8 +1,30 @@
 ---
 import { content } from '../data/content';
-import { Briefcase, Zap, Bot, Database, Code, Activity } from 'lucide-react';
+import { 
+  Briefcase, Zap, Bot, Database, Code, Activity, 
+  Search, Cloud, Users, Layout, Globe, RefreshCw, 
+  Monitor, Link, Cpu, Calendar, Server 
+} from 'lucide-react';
 
 const { oci, earlier } = content.experience;
+
+const getProjectIcon = (title: string) => {
+  const t = title.toLowerCase();
+  if (t.includes('ai') || t.includes('agent')) return Bot;
+  if (t.includes('search')) return Search;
+  if (t.includes('database') || t.includes('fleet')) return Database;
+  if (t.includes('monitoring') || t.includes('performance') || t.includes('analytics')) return Activity;
+  if (t.includes('cloud')) return Cloud;
+  if (t.includes('mentoring') || t.includes('leadership')) return Users;
+  if (t.includes('refactoring') || t.includes('modernization')) return RefreshCw;
+  if (t.includes('jet') || t.includes('ui')) return Layout;
+  if (t.includes('demo') || t.includes('ecosystem')) return Globe;
+  if (t.includes('automation') || t.includes('desktop')) return Monitor;
+  if (t.includes('integration') || t.includes('pipeline')) return Link;
+  if (t.includes('release') || t.includes('build')) return Cpu;
+  if (t.includes('planner') || t.includes('schedule')) return Calendar;
+  return Code;
+};
 ---
 
 <section id="experience" class="py-24 bg-muted/30 scroll-mt-20">
@@ -15,16 +37,16 @@ const { oci, earlier } = content.experience;
     </div>
 
     <!-- Summary Highlight -->
-    <div class="mb-16 p-8 rounded-3xl bg-card border border-border/50 text-center max-w-4xl mx-auto">
-      <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8">
+    <div class="mb-20 p-10 md:p-16 rounded-[3rem] bg-card border border-border/50 text-center max-w-5xl mx-auto">
+      <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12">
         {content.summary.p2} <span class="text-foreground font-bold">{content.summary.p2Highlight}</span>{content.summary.p2End}
       </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {content.competencies.map((item) => (
-          <div class="p-6 rounded-2xl bg-background border border-border group hover:border-primary/30 transition-all text-left flex flex-col">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Zap class="w-4 h-4 text-primary" />
+          <div class="p-8 rounded-3xl bg-background border border-border group hover:border-primary/30 transition-all text-left flex flex-col min-h-[160px]">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Zap class="w-5 h-5 text-primary" />
               </div>
               <span class="text-sm font-bold group-hover:text-primary transition-colors leading-tight">{item.title}</span>
             </div>
@@ -35,43 +57,37 @@ const { oci, earlier } = content.experience;
     </div>
 
     <!-- OCI Main Role -->
-    <div class="mb-12">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center p-2 border border-border/50">
-              <img src="/logos/Oracle_logo.svg" alt="Oracle" class="w-full h-auto" />
-            </div>
-            <div>
-              <h3 class="font-display text-3xl font-bold">{oci.company}</h3>
-              <p class="text-muted-foreground uppercase tracking-widest text-xs font-bold">{oci.location}</p>
-            </div>
+    <div class="mb-16 p-10 md:p-16 rounded-[3.5rem] bg-card border border-border/50">
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-16">
+        <div class="flex items-center gap-8">
+          <div class="w-20 h-20 rounded-[1.5rem] bg-white flex items-center justify-center p-4 border border-border/50 shrink-0 shadow-sm">
+            <img src="/logos/Oracle_logo.svg" alt="Oracle" class="w-full h-auto" />
           </div>
-          <p class="text-primary font-bold text-lg mb-1">{oci.role}</p>
-          <p class="text-sm text-muted-foreground font-medium">{oci.period}</p>
+          <div>
+            <h3 class="font-display text-3xl md:text-4xl font-bold tracking-tight">{oci.company}</h3>
+            <p class="text-primary font-bold text-lg mt-2">{oci.role}</p>
+            <p class="text-sm text-muted-foreground font-medium mt-1">{oci.period} · {oci.location}</p>
+          </div>
         </div>
       </div>
 
-      <ul class="grid md:grid-cols-2 gap-4 text-muted-foreground mb-12">
-        {oci.highlights.map((h) => (
-          <li class="flex items-start gap-3 bg-card p-4 rounded-2xl border border-border/50">
-            <span class="text-primary font-bold mt-1">/</span>
-            <span class="text-sm leading-relaxed">{h}</span>
-          </li>
-        ))}
-      </ul>
+      <div class="max-w-4xl mb-16">
+         <p class="text-lg md:text-xl text-muted-foreground leading-relaxed">
+           Engineering leader and architect driving large-scale technical transformations for Oracle Cloud Infrastructure. Focused on operational excellence, AI-driven diagnostics, and fleet-wide database management at enterprise scale.
+         </p>
+      </div>
 
       <!-- Bento Grid for Achievements -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
         <!-- CI/CD Featured Achievement -->
-        <div class="md:col-span-4 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-background to-background border border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
-          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <Activity class="w-32 h-32" />
+        <div class="md:col-span-4 p-8 md:p-10 rounded-[2.5rem] bg-gradient-to-br from-primary/10 via-background to-background border border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity">
+            <Activity class="w-48 h-48" />
           </div>
-          <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-12">
             <div class="flex-1">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center">
+              <div class="flex items-center gap-4 mb-8">
+                <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center">
                   <Activity class="w-6 h-6 text-primary" />
                 </div>
                 <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest">
@@ -79,8 +95,9 @@ const { oci, earlier } = content.experience;
                 </span>
               </div>
               <h4 class="font-display text-3xl font-bold mb-4">{oci.featuredAchievement.title}</h4>
-              <p class="text-muted-foreground leading-relaxed mb-6 max-w-2xl">{oci.featuredAchievement.desc}</p>
-              <ul class="grid sm:grid-cols-2 gap-3">
+              <p class="text-base text-muted-foreground leading-relaxed mb-6 max-w-2xl">{oci.featuredAchievement.desc}</p>
+
+              <ul class="grid sm:grid-cols-2 gap-3 mb-8">
                 {oci.featuredAchievement.points.map((p) => (
                   <li class="flex items-center gap-2 text-sm text-muted-foreground">
                     <div class="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -88,12 +105,18 @@ const { oci, earlier } = content.experience;
                   </li>
                 ))}
               </ul>
+
+              <div class="flex flex-wrap gap-2">
+                {oci.featuredAchievement.tech.map((t) => (
+                  <span class="px-3 py-1 rounded-lg text-[10px] font-bold bg-primary/10 text-primary uppercase tracking-tight border border-primary/20">{t}</span>
+                ))}
+              </div>
             </div>
             <div class="flex flex-row lg:flex-col gap-3">
               {oci.featuredAchievement.metrics.map((m) => (
-                <div class="flex-1 lg:w-32 p-4 rounded-2xl bg-primary/5 border border-primary/10 text-center">
+                <div class="flex-1 lg:w-36 p-5 rounded-[2rem] bg-primary/5 border border-primary/10 text-center">
                   <div class="text-2xl font-display font-bold text-primary">{m.value}</div>
-                  <div class="text-xs text-muted-foreground uppercase font-bold tracking-tight leading-none mt-1">{m.label}</div>
+                  <div class="text-[10px] text-muted-foreground uppercase font-bold tracking-tight leading-none mt-1">{m.label}</div>
                 </div>
               ))}
             </div>
@@ -101,32 +124,33 @@ const { oci, earlier } = content.experience;
         </div>
 
         <!-- Other Bento Cards -->
-        {oci.bentoCards.map((card, i) => {
-          const isHighValue = card.title === "Performance Hub AI" || card.title === "OCI Database Management";
-          const bgColor = i === 0 ? "bg-gradient-to-br from-primary/10 to-background border-primary/20" : 
-                          i === 1 ? "bg-gradient-to-br from-accent/10 to-background border-accent/20" : 
-                          "bg-card border-border/50";
-          const iconColor = i === 0 ? "text-primary" : i === 1 ? "text-accent" : "text-muted-foreground";
-          const iconBg = i === 0 ? "bg-primary/10" : i === 1 ? "bg-accent/10" : "bg-muted/10";
-
+        {oci.bentoCards.map((card) => {
+          const Icon = getProjectIcon(card.title);
           return (
-            <div class={`p-8 rounded-3xl border hover:border-primary/30 transition-all flex flex-col min-h-[260px] ${i < 2 ? 'md:col-span-2' : 'md:col-span-1'} ${bgColor}`}>
+            <div class={`p-8 rounded-[2rem] bg-gradient-to-br from-primary/5 to-background border border-primary/20 hover:border-primary/40 transition-all flex flex-col min-h-[280px] md:col-span-2 group`}>
               <div class="flex items-center justify-between mb-6">
-                 <div class={`w-12 h-12 rounded-2xl ${iconBg} flex items-center justify-center`}>
-                   {i === 0 ? <Bot class={`w-7 h-7 ${iconColor}`} /> : 
-                    i === 1 ? <Database class={`w-7 h-7 ${iconColor}`} /> : 
-                    <Code class={`w-6 h-6 ${iconColor}`} />}
+                 <div class={`w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors`}>
+                   <Icon class="w-7 h-7 text-primary" />
                  </div>
                  {card.badge && (
-                   <span class={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${i === 0 ? 'bg-primary/10 text-primary' : i === 1 ? 'bg-accent/10 text-accent' : 'bg-muted text-muted-foreground'}`}>
+                   <span class={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-primary/5 text-primary/70 border border-primary/10`}>
                      {card.badge}
                    </span>
                  )}
               </div>
-              <h4 class="font-display text-2xl font-bold mb-3">{card.title}</h4>
-              <p class="text-sm text-muted-foreground leading-relaxed flex-1">{card.desc}</p>
+              <h4 class="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{card.title}</h4>
+              <p class="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{card.desc}</p>
+              
+              <div class="flex flex-wrap gap-2 mb-6">
+                {card.tech?.map((t) => (
+                  <span class={`px-2 py-1 rounded-lg text-[10px] font-bold bg-primary/5 text-primary/80 uppercase tracking-tight border border-primary/10`}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+
               {card.metric && (
-                 <span class="text-xs font-bold text-primary uppercase tracking-widest mt-6 pt-4 border-t border-border/30 inline-block">{card.metric}</span>
+                 <span class="text-xs font-bold text-primary uppercase tracking-widest mt-6 pt-4 border-t border-primary/10 inline-block">{card.metric}</span>
               )}
             </div>
           );
@@ -135,24 +159,58 @@ const { oci, earlier } = content.experience;
     </div>
 
     <!-- Earlier Experience -->
-    <div class="grid md:grid-cols-2 gap-6 mt-16">
+    <div class="space-y-20 mt-32">
       {earlier.map((role) => (
-        <div class="p-8 rounded-3xl bg-card border border-border/50 hover:border-primary/20 transition-all flex flex-col">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center p-1.5 border border-border/50 shrink-0">
-              <img 
-                src={role.company.includes('Oracle') ? '/logos/Oracle_logo.svg' : '/logos/IBM_logo.svg'} 
-                alt={role.company} 
-                class="w-full h-auto" 
-              />
+        <div class="p-10 md:p-16 rounded-[3.5rem] bg-card border border-border/50 transition-all">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-16">
+            <div class="flex items-center gap-8">
+              <div class="w-20 h-20 rounded-[1.5rem] bg-white flex items-center justify-center p-4 border border-border/50 shrink-0 shadow-sm">
+                <img 
+                  src={role.company.includes('Oracle') ? '/logos/Oracle_logo.svg' : '/logos/IBM_logo.svg'} 
+                  alt={role.company} 
+                  class="w-full h-auto" 
+                />
+              </div>
+              <div>
+                <h3 class="font-display text-3xl md:text-4xl font-bold tracking-tight">{role.company}</h3>
+                <p class="text-primary font-bold text-lg mt-2">{role.role}</p>
+                <p class="text-sm text-muted-foreground font-medium mt-1">{role.period}</p>
+              </div>
             </div>
-            <h3 class="font-display text-2xl font-bold">{role.company}</h3>
           </div>
-          <p class="text-primary font-bold text-sm mb-4">{role.role} · {role.period}</p>
-          <p class="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{role.desc}</p>
-          <div class="p-4 rounded-2xl bg-muted/30 border border-border/50">
-            <p class="text-xs text-muted-foreground italic leading-relaxed">"{role.recommendation}"</p>
+
+          <div class="max-w-4xl mb-16">
+             <p class="text-lg md:text-xl text-muted-foreground leading-relaxed">{role.desc}</p>
           </div>
+
+          {role.projects && (
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+              {role.projects.map((project) => {
+                const Icon = getProjectIcon(project.title);
+                return (
+                  <div class="p-8 rounded-[2rem] bg-gradient-to-br from-primary/5 to-background border border-primary/20 hover:border-primary/40 transition-all flex flex-col group">
+                    <div class="flex items-center justify-between mb-6">
+                      <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Icon class="w-7 h-7 text-primary" />
+                      </div>
+                      <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-primary/5 text-primary/70 border border-primary/10">
+                        {project.badge}
+                      </span>
+                    </div>
+                    
+                    <h4 class="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h4>
+                    <p class="text-sm text-muted-foreground leading-relaxed mb-8 flex-1">{project.desc}</p>
+                    
+                    <div class="flex flex-wrap gap-2">
+                      {project.tech.map((t) => (
+                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-primary/5 text-primary/80 uppercase tracking-tight border border-primary/10">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       ))}
     </div>

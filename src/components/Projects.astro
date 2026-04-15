@@ -1,6 +1,15 @@
 ---
 import { content } from '../data/content';
-import { FolderGit2, Github, Sparkles } from 'lucide-react';
+import { FolderGit2, Github, Sparkles, Bot, Search, Database, Activity, Code } from 'lucide-react';
+
+const getProjectIcon = (title: string) => {
+  const t = title.toLowerCase();
+  if (t.includes('ai') || t.includes('agent')) return Bot;
+  if (t.includes('search')) return Search;
+  if (t.includes('database')) return Database;
+  if (t.includes('monitoring') || t.includes('performance')) return Activity;
+  return Code;
+};
 ---
 
 <section id="projects" class="py-24 scroll-mt-20">
@@ -23,45 +32,83 @@ import { FolderGit2, Github, Sparkles } from 'lucide-react';
       </a>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
-      {content.projects.map((project, i) => (
-        <div class={`p-8 rounded-3xl transition-all duration-300 flex flex-col group ${
-          i === 0 ? 'bg-gradient-to-br from-primary/10 to-background border-2 border-primary/30' : 'bg-card border border-border/50 hover:border-primary/20'
-        }`}>
-          <div class="flex items-start justify-between mb-6 gap-4">
-            <h3 class="font-display text-2xl font-bold group-hover:text-primary transition-colors">{project.title}</h3>
-            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest whitespace-nowrap shrink-0">{project.badge}</span>
-          </div>
-          
-          <p class="text-muted-foreground leading-relaxed mb-8 flex-1">
-            {project.desc}
-          </p>
+    <div class="space-y-8">
+      {content.projects.map((project) => {
+        const Icon = getProjectIcon(project.title);
+        return (
+          <div class="p-8 md:p-12 rounded-[3rem] bg-gradient-to-br from-primary/10 via-background to-background border border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Icon class="w-48 h-48" />
+            </div>
+            
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-8">
+                <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                  <Icon class="w-7 h-7 text-primary" />
+                </div>
+                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/10">
+                  {project.badge}
+                </span>
+              </div>
 
-          <div class="flex flex-wrap gap-2">
-            {project.tech.map((t) => (
-              <span class="px-3 py-1.5 rounded-full text-xs font-bold bg-muted text-muted-foreground uppercase tracking-tight">
-                {t}
-              </span>
-            ))}
+              <h3 class="font-display text-3xl font-bold mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
+              
+              <p class="text-base text-muted-foreground leading-relaxed mb-8 max-w-3xl">
+                {project.desc}
+              </p>
+
+              {project.points && (
+                <ul class="grid sm:grid-cols-2 gap-4 mb-8">
+                  {project.points.map((p) => (
+                    <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                      <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div class="flex flex-wrap gap-2">
+                {project.tech.map((t) => (
+                  <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-primary/5 text-primary/80 uppercase tracking-tight border border-primary/10">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
 
     <!-- Featured Skills Highlight -->
-    <div class="mt-6 p-8 rounded-3xl bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20">
-      <div class="flex items-start gap-6">
-        <div class="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center shrink-0">
-          <Sparkles class="w-7 h-7 text-accent" />
-        </div>
-        <div>
-          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
-            <h3 class="font-display text-2xl font-bold">AI Engineering Leadership</h3>
-            <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest w-fit">Agentic Workflows</span>
+    <div class="mt-12 p-8 md:p-12 rounded-[3.5rem] bg-gradient-to-br from-primary/10 via-background to-background border border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity">
+        <Sparkles class="w-48 h-48" />
+      </div>
+
+      <div class="relative z-10">
+        <div class="flex items-center justify-between mb-8">
+          <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+            <Sparkles class="w-7 h-7 text-primary" />
           </div>
-          <p class="text-muted-foreground text-lg leading-relaxed">
-            Expert in architecting autonomous systems using multi-agent orchestration and LLMs to drive operational efficiency and technical innovation.
-          </p>
+          <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/10">
+            Agentic Workflows
+          </span>
+        </div>
+
+        <h3 class="font-display text-3xl font-bold mb-4 group-hover:text-primary transition-colors">AI Engineering Leadership</h3>
+        
+        <p class="text-base text-muted-foreground leading-relaxed mb-8 max-w-3xl">
+          Expert in architecting autonomous systems using multi-agent orchestration and LLMs to drive operational efficiency and technical innovation.
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          {["Multi-Agent Orchestration", "LLM Integration", "Enterprise AI Architecture", "Autonomous Systems"].map((t) => (
+            <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-primary/5 text-primary/80 uppercase tracking-tight border border-primary/10">
+              {t}
+            </span>
+          ))}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 export const content = {
   name: "Orlando Magallanes Garcia",
-  handle: "Orlando MG",
+  handle: "Orlando",
   github: "orlandomgr",
   email: "orlandomgr@gmail.com",
   title: "Engineering Manager · Architect · AI Builder",
@@ -43,6 +43,7 @@ export const content = {
         title: "CI/CD Optimization (96%)",
         badge: "Operational Excellence",
         desc: "Complete overhaul of the CI/CD pipeline for the global engineering organization, removing critical bottlenecks.",
+        tech: ["Docker", "Jenkins", "Distributed Systems", "Parallel Computing"],
         metrics: [
           { value: "96%", label: "time reduction" },
           { value: "14h → 30m", label: "acceleration" },
@@ -61,18 +62,44 @@ export const content = {
           title: "Performance Hub AI",
           badge: "AI Innovation",
           desc: "Integration of AI agents for automated root cause analysis of database performance issues.",
+          tech: ["AI Agents", "Java", "Python", "OCI"],
           points: ["Diagnostic Agent: identifies anomalies in real-time"]
+        },
+        {
+          title: "ASH Analytics",
+          badge: "Real-Time Diagnostics",
+          desc: "Building advanced diagnostic tools for mission-critical databases using proprietary ASH sampling and workload repository insights.",
+          tech: ["ASH Analytics", "Java", "SQL", "Diagnostics"],
+          points: ["Real-time database performance monitoring"]
         },
         {
           title: "OCI Database Management",
           badge: "Product Delivery",
           desc: "Unified console for managing thousands of enterprise databases in the cloud.",
+          tech: ["Java", "Microservices", "Oracle DB", "OCI"],
           points: ["Unified fleet management at enterprise scale"]
         },
-        { title: "Exadata Monitoring", desc: "Monitoring architecture for high-performance systems", metric: "Enterprise Scale" },
-        { title: "AI Startup Gen", desc: "Multi-agent orchestration for software lifecycle", metric: "Lead Dev" },
-        { title: "Mentoring", desc: "Technical leadership and mentoring for global engineers", metric: "Global Team" },
-        { title: "JET Refactoring", desc: "Migrating legacy systems to modern web standards", metric: "Oracle JET" }
+        { 
+          title: "Exadata Monitoring", 
+          desc: "Monitoring architecture for high-performance systems", 
+          badge: "Architecture", 
+          tech: ["Exadata", "Real-time Analytics", "Distributed Systems"],
+          points: ["High-scale monitoring for Exadata clusters"] 
+        },
+        { 
+          title: "Cloud Scale Fleet", 
+          desc: "Managing thousands of enterprise databases", 
+          badge: "Scale", 
+          tech: ["Automation", "Cloud Infrastructure", "Systems Design"],
+          points: ["Fleet-wide operations and automated maintenance"] 
+        },
+        {
+          title: "Mentoring",
+          badge: "Leadership",
+          desc: "Technical leadership and mentoring for global engineers to enhance velocity and productivity cycles.",
+          tech: ["Leadership", "Management", "Agile"],
+          points: ["Defining technical roadmaps and career growth"]
+        }
       ]
     },
     earlier: [
@@ -81,14 +108,84 @@ export const content = {
         role: "Software Development Manager",
         period: "2012 - 2018",
         desc: "Led architectural refactoring of database analytics tools using Oracle JET. Integrated high-scale technologies like Cassandra and MongoDB.",
-        recommendation: "Led the transition from legacy systems to modern web standards, increasing delivery speed and productivity for the global team."
+        projects: [
+          {
+            title: "Java Search Engine",
+            badge: "Oracle",
+            desc: "High-performance Java search tool based on Lucene to replace traditional search methods, significantly increasing data retrieval speed.",
+            tech: ["Java", "Lucene", "Algorithmic Optimization"]
+          },
+          {
+            title: "Oracle Management Cloud",
+            badge: "High-Scale Data",
+            desc: "Integrated high-scale data technologies and database performance solutions into the Oracle Management Cloud ecosystem.",
+            tech: ["Cassandra", "MongoDB", "Oracle NoSQL", "Algorithmic Optimization"],
+            points: [
+              "Integrated Cassandra, Oracle NoSQL, and MongoDB into the OMC ecosystem",
+              "Optimized resource utilization through advanced algorithmic tuning"
+            ]
+          },
+          {
+            title: "JET Refactoring",
+            badge: "Modernization",
+            desc: "Migrating legacy systems to modern web standards and integrating Oracle JET into the core architecture.",
+            tech: ["Oracle JET", "JavaScript", "Architecture"],
+            points: ["Oracle JET integration and architectural refactoring"]
+          },
+          {
+            title: "EMCC Core Performance",
+            badge: "Core EMCC",
+            desc: "Technical guide for foundational performance tools including Top Activity, Emergency Monitoring, and Real-Time ADDM.",
+            tech: ["Java/JEE", "EMCC", "UML Design", "ADDM"],
+            points: ["Technical lead for EMCC performance features"]
+          },
+          {
+            title: "Demo Ecosystem",
+            badge: "Demo Systems",
+            desc: "Architected and maintained a complex full-stack demo environment (Hadoop, Kafka, WebLogic) for global sales showcases.",
+            tech: ["Kafka", "Hadoop", "WebLogic", "Systems Design"],
+            points: ["Global sales enablement and feature showcasing"]
+          },
+          {
+            title: "Legacy Modernization",
+            badge: "Migration",
+            desc: "Led the migration of legacy Oracle UIX tools into newer Oracle ADF and JET platforms for improved UX.",
+            tech: ["Oracle ADF", "Oracle UIX", "UI Modernization"],
+            points: ["Migration from UIX to ADF and JET"]
+          }
+        ]
       },
       {
         company: "IBM Mexico",
         role: "Software Development Engineer",
         period: "2004 - 2012",
-        desc: "Developed Java SE and SWT applications reducing ticket resolution time by 83%. Designed internal web applications using Struts.",
-        recommendation: "Demonstrated exceptional commitment and brilliant technical ability to optimize critical support processes and build automation."
+        desc: "Developed high-impact Java applications and automated release management tools. Specialized in Rational tools support and cross-platform systems administration for Unix, Linux, and Windows.",
+        projects: [
+          {
+            title: "Automation Desktop Tools",
+            badge: "Efficiency",
+            desc: "Developed a suite of desktop applications using Java SE and SWT to automate repetitive support tasks and optimize team workflows.",
+            tech: ["Java SE", "SWT", "Eclipse", "Rational Dev"]
+          },
+          {
+            title: "ePipeline Integration",
+            badge: "Middleware",
+            desc: "Engineered a Java-based interface between ePipeline and Focal Point using web services and optimized database queries.",
+            tech: ["Java", "Web Services", "Websphere", "Apache"]
+          },
+          {
+            title: "Release Build Automation",
+            badge: "Build Ops",
+            desc: "Developed J2EE tools to automate software release cycles for multiple product families, significantly reducing manual overhead.",
+            tech: ["J2EE", "Build Forge", "Rational Tools"],
+          },
+          {
+            title: "Internal Operations Planner",
+            badge: "Web Standards",
+            desc: "Built a web-based team schedule and vacation planner using the Struts framework following W3 standards to improve resource transparency.",
+            tech: ["Struts", "Java", "W3C Standards"]
+          }
+        ]
       }
     ]
   },
@@ -96,32 +193,14 @@ export const content = {
     {
       title: "AI Startup Generator",
       badge: "Lead Developer",
-      desc: "End-to-end autonomous platform using Microsoft Agent framework to orchestrate the software life cycle. Engineered multi-agent workflows with OpenAI and LM Studio.",
-      tech: ["React", "TypeScript", "Microsoft Agent Framework", "Docker"]
-    },
-    {
-      title: "CI/CD Pipeline Overhaul",
-      badge: "Oracle OCI",
-      desc: "Reduced build times from 14 hours to 30 minutes (96% reduction) for a global engineering organization through architectural optimization and parallelization.",
-      tech: ["OCI", "Docker", "Jenkins", "Distributed Systems"]
-    },
-    {
-      title: "Performance Hub AI",
-      badge: "Oracle OCI",
-      desc: "Integration of AI-driven root cause analysis into OCI Performance Hub to automate performance visualization and provide deep workload insights.",
-      tech: ["AI Agentic Workflows", "Java", "Python", "OCI"]
-    },
-    {
-      title: "Unified Fleet Management",
-      badge: "Oracle OCI",
-      desc: "Delivery of OCI Database Management features enabling unified management for thousands of enterprise databases from a single console.",
-      tech: ["Java", "Microservices", "Oracle Database", "OCI"]
-    },
-    {
-      title: "Java Search Engine",
-      badge: "Oracle",
-      desc: "High-performance Java search tool based on Lucene to replace traditional search methods, significantly increasing data retrieval speed.",
-      tech: ["Java", "Lucene", "Algorithmic Optimization"]
+      desc: "End-to-end autonomous platform using Microsoft Agent framework to orchestrate the software life cycle from ideation to implementation.",
+      tech: ["React", "TypeScript", "Microsoft Agent Framework", "Docker", "OpenAI", "LM Studio"],
+      points: [
+        "Architected and deployed an end-to-end autonomous platform using the Microsoft Agent framework",
+        "Engineered multi-agent workflows with OpenAI and LM Studio for high-performance local AI execution",
+        "Built a modern frontend using React and TypeScript for managing complex AI Agent interactions",
+        "Implemented a secure execution environment using Docker images for safety and isolation"
+      ]
     }
   ],
   leadership: {
