@@ -5,6 +5,7 @@ import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro';
 import TableOfContents from '../components/TableOfContents';
+import ThemeToggle from '../components/ThemeToggle';
 import { content } from '../data/content';
 import { Share2, GraduationCap, Code, Globe, BookOpen } from 'lucide-react';
 ---
@@ -13,6 +14,7 @@ import { Share2, GraduationCap, Code, Globe, BookOpen } from 'lucide-react';
   title={`${content.name} | ${content.title}`}
   description={content.bio[0]}
 >
+  <ThemeToggle client:load />
   <TableOfContents client:load />
 
   <main>
