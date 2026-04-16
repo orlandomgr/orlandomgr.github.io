@@ -5,14 +5,14 @@
 :root {
   --background: 0 0% 100%;
   --foreground: 0 0% 4%;
-  --primary: 199 89% 48%;
+  --primary: 201 100% 36%;
   --primary-foreground: 0 0% 100%;
-  --accent: 45 93% 47%;
+  --accent: 35 100% 35%;
   --accent-foreground: 0 0% 100%;
   --border: 0 0% 90%;
   --card: 0 0% 98%;
   --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  --muted-foreground: 0 0% 35%;
 }
 
 .dark {
@@ -41,7 +41,7 @@
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00b4d8] to-[#0077b6];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0077b6] to-[#005f73];
 }
 
 .dark .text-gradient {

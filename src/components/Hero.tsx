@@ -126,7 +126,7 @@ export default function Hero() {
             <p className="text-lg md:text-xl text-muted-foreground mb-4">
               Hi, I'm <span className="text-gradient font-bold tracking-tight">{content.handle}</span>,
             </p>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.1] min-h-[3.2em] md:min-h-[1.1em] flex items-start justify-center md:justify-start gap-2 sm:gap-4">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.1] min-h-[4em] md:min-h-[1.1em] flex items-start justify-center md:justify-start gap-2 sm:gap-4">
               <span className="inline-block w-[4px] sm:w-[6px] h-[0.85em] bg-primary rounded-sm animate-blink shrink-0 mt-[0.1em]" />
               <span className="text-gradient md:whitespace-nowrap">
                 {hydrated ? displayText : GREETING_ROLES[0]}
