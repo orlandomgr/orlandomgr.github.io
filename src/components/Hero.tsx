@@ -94,12 +94,16 @@ export default function Hero() {
               <div className="absolute inset-2 rounded-full bg-gradient-to-br from-primary/50 to-primary/10 p-[2.5px]">
                 <div className="w-full h-full rounded-full overflow-hidden bg-card shadow-inner">
                   <img
-                    src="/foto-avatar.png"
+                    src="/foto-avatar.jpg"
                     alt={content.name}
+                    width="512"
+                    height="512"
+                    decoding="async"
+                    loading="eager"
                     className="w-full h-full object-cover"
                   />
                 </div>
-              </div>
+                </div>
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -155,6 +159,7 @@ export default function Hero() {
             <div className="flex flex-wrap justify-center md:justify-start gap-4">
               <a
                 href={`mailto:${content.email}`}
+                aria-label="Send an email to Orlando"
                 className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#00a3ff] text-white font-bold uppercase tracking-widest text-xs hover:brightness-110 hover:shadow-[0_0_30px_rgba(0,163,255,0.3)] transition-all duration-300"
               >
                 <Mail className="w-5 h-5" />
@@ -164,6 +169,7 @@ export default function Hero() {
                 href="https://linkedin.com/in/orlandomgr"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Orlando's LinkedIn profile"
                 className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-xs font-bold uppercase tracking-widest"
               >
                 <Linkedin className="w-5 h-5 text-[#0a66c2]" />

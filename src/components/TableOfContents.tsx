@@ -90,6 +90,7 @@ export default function TableOfContents() {
                     <li key={section.id}>
                       <button
                         onClick={() => scrollTo(section.id)}
+                        aria-label={`Scroll to ${section.label} section`}
                         className={`group relative flex items-center text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
                           isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
                         }`}
@@ -140,6 +141,7 @@ export default function TableOfContents() {
             
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
               className="w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
