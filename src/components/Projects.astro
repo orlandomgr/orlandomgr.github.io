@@ -46,7 +46,7 @@ const getProjectIcon = (title: string) => {
                 <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                   <Icon class="w-7 h-7 text-primary" />
                 </div>
-                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/10">
+                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/10">
                   {project.badge}
                 </span>
               </div>
@@ -70,7 +70,7 @@ const getProjectIcon = (title: string) => {
 
               <div class="flex flex-wrap gap-2">
                 {project.tech.map((t) => (
-                  <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-primary/5 text-primary/80 uppercase tracking-tight border border-primary/10">
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-primary/5 text-primary uppercase tracking-tight border border-primary/10">
                     {t}
                   </span>
                 ))}
@@ -92,7 +92,7 @@ const getProjectIcon = (title: string) => {
           <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
             <Sparkles class="w-7 h-7 text-primary" />
           </div>
-          <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/10">
+          <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/10">
             Agentic Workflows
           </span>
         </div>
@@ -105,7 +105,7 @@ const getProjectIcon = (title: string) => {
 
         <div class="flex flex-wrap gap-2">
           {["Multi-Agent Orchestration", "LLM Integration", "Enterprise AI Architecture", "Autonomous Systems"].map((t) => (
-            <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-primary/5 text-primary/80 uppercase tracking-tight border border-primary/10">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-primary/5 text-primary uppercase tracking-tight border border-primary/10">
               {t}
             </span>
           ))}

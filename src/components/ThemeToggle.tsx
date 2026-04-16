@@ -33,7 +33,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-[60] w-12 h-12 rounded-full bg-card/80 backdrop-blur-xl border border-border shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group overflow-hidden"
+      className="fixed top-6 right-6 z-[60] w-14 h-14 rounded-full bg-card/80 backdrop-blur-xl border border-border shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group overflow-hidden"
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
     >
       <div className="relative w-6 h-6">

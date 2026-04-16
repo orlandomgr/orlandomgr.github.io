@@ -100,6 +100,7 @@ export default function Hero() {
                     height="512"
                     decoding="async"
                     loading="eager"
+                    fetchPriority="high"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -160,7 +161,7 @@ export default function Hero() {
               <a
                 href={`mailto:${content.email}`}
                 aria-label="Send an email to Orlando"
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#00a3ff] text-white font-bold uppercase tracking-widest text-xs hover:brightness-110 hover:shadow-[0_0_30px_rgba(0,163,255,0.3)] transition-all duration-300"
+                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#0077b6] text-white font-bold uppercase tracking-widest text-xs hover:brightness-110 hover:shadow-[0_0_30px_rgba(0,119,182,0.4)] transition-all duration-300"
               >
                 <Mail className="w-5 h-5" />
                 Contact Me

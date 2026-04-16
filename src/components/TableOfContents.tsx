@@ -127,7 +127,7 @@ export default function TableOfContents() {
                       <button
                         key={section.id}
                         onClick={() => scrollTo(section.id)}
-                        className={`w-full text-left px-5 py-4 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all ${
+                        className={`w-full text-left px-5 py-5 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all ${
                           activeId === section.id ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'hover:bg-muted text-muted-foreground'
                         }`}
                       >
