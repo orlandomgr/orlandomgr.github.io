@@ -14,8 +14,8 @@ import { Share2, GraduationCap, Code, Globe, BookOpen } from 'lucide-react';
   title={`${content.name} | ${content.title}`}
   description={content.bio[0]}
 >
-  <ThemeToggle client:idle />
-  <TableOfContents client:idle />
+  <ThemeToggle client:visible />
+  <TableOfContents client:visible />
 
   <main>
     <Hero client:load />
